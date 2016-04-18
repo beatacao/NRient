@@ -8,9 +8,9 @@ var config = {
   // debug 为 true 时，用于本地调试
   debug: true,
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
-  name: 'Yimei', // 社区名字
-  description: '煤炭 互联网 易煤', // 社区的描述
-  keywords: '煤炭 互联网 易煤',
+  name: 'NRient', 
+  description: '', 
+  keywords: 'nodejs react redux webpack',
   site_logo: '', 
   site_icon: '', 
   // 程序运行的端口
