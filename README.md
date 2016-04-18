@@ -1,8 +1,8 @@
-NCServer
+NRient
 =
 
 ## 介绍
 
-基于Nodejs的前后端完全分离开发
+基于Nodejs、Reactjs、Redux及webpack的前后端分离开发
 
 
