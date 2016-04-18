@@ -13,7 +13,7 @@ var Loader                   = require('loader');
 var express                  = require('express');
 var session                  = require('express-session');
 var webRouter                = require('./webRouter');
-var apiRouter                = require('./apiRouter');
+// var apiRouter                = require('./apiRouter');
 var auth                     = require('./middlewares/auth');
 var errorPageMiddleware      = require("./middlewares/error_page");
 var RedisStore               = require('connect-redis')(session);
@@ -124,7 +124,7 @@ app.use(busboy({
 }));
 
 // routes
-app.use('/api', cors(), apiRouter);
+// app.use('/api', cors(), apiRouter);
 app.use('/', webRouter);
 
 // error handler
