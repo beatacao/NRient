@@ -5,7 +5,7 @@ NRient
 
 基于Nodejs、Reactjs、Redux及webpack的前后端分离开发
 
-### 使用
+## 使用
 
 web开发目录 - app:
 
