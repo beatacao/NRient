@@ -9,11 +9,11 @@ NRient
 
 web开发目录 - app:
 
-build: npm run build;
-start: npm start -- --port 3000;
+- build: npm run build;
+- start: npm start -- --port 3000;
 
 nodejs server目录 - nodejs:
-start: node app;
+- start: node app;
 
 
 
