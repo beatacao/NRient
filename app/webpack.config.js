@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, './build'),
+    path: path.join(__dirname, './assets'),
     filename: 'js/app.js',
   },
   node: {
@@ -69,7 +69,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './build',
+    contentBase: './assets',
     hot: true,
     watchOptions: {
       aggregateTimeout: 300,

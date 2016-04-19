@@ -7,7 +7,7 @@
     "test": "NODE_ENV=test make test",
     "test:coverage": "NODE_ENV=test make test-cover",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --host 0.0.0.0",
-    "build": "export NODE_ENV=production && rm -rf ./build && webpack --progress --colors",
+    "build": "export NODE_ENV=production && rm -rf ./assets && webpack --progress --colors",
     "update": "export NODE_ENV=production && webpack --progress --colors",
     "serve:coverage": "make coverage-server"
   },

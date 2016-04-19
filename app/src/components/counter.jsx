@@ -4,7 +4,7 @@ import * as counter_actions from '../actions/counter';
 
 export class Counter extends React.Component {
   render(){
-    var {counter, handleSubmit, actions, dispatch} = this.props;
+    var {counter, actions} = this.props;
     return (<div>
               Counter:{counter}
               <br />
