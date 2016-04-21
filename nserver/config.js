@@ -1,9 +1,6 @@
 /**
  * config
  */
-
-var path = require('path');
-
 var config = {
   // debug 为 true 时，用于本地调试
   debug: true,
@@ -17,10 +14,11 @@ var config = {
   port: 3000,
   // 域名
   host: '',
-  session_secret: 'secret',
+  session_secret: 'this_is_yimeis_secret_key_node_redis__cache_long_',
+  auth_cookie_name: 'signed_cookie_username',
   redis:{
-  	host: '',
-  	port: '',
+  	host: '127.0.0.1',
+  	port: '6379',
   	db: 0
   }
 };
