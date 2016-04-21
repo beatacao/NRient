@@ -12,8 +12,8 @@ var path                     = require('path');
 var Loader                   = require('loader');
 var express                  = require('express');
 var session                  = require('express-session');
-var webRouter                = require('./webRouter');
-// var apiRouter                = require('./apiRouter');
+var webRouter                = require('./web_router');
+var apiRouter                = require('./api_router');
 var auth                     = require('./middlewares/auth');
 var errorPageMiddleware      = require("./middlewares/error_page");
 var RedisStore               = require('connect-redis')(session);
@@ -82,12 +82,11 @@ app.use(session({
     host: config.redis.host,
   }),
   resave: true,
-  saveUninitialized: true,
+  saveUninitialized: true
 }));
 
 // custom middleware
-// app.use(auth.authUser);
-// app.use(auth.blockUser());
+app.use(auth.authUser);
 
 if (!config.debug) {
   app.use(function (req, res, next) {
@@ -124,7 +123,7 @@ app.use(busboy({
 }));
 
 // routes
-// app.use('/api', cors(), apiRouter);
+app.use('/api', cors(), apiRouter);
 app.use('/', webRouter);
 
 // error handler

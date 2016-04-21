@@ -6,13 +6,16 @@
  * Module dependencies.
  */
 
-var express          = require('express');
+var express = require('express');
 var siteController = require('./controllers/site');
 var staticController = require('./controllers/static');
+var signController = require('./controllers/sign');
 
-var router           = express.Router();
+var router = express.Router();
 
 router.get('/', siteController.index);
-router.get('/about', staticController.about);
+
+router.post('/signout', signController.signout);  
+router.post('/signin', signController.signin);  
 
 module.exports = router;

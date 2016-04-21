@@ -1,5 +1,15 @@
 // ErrorPage middleware
 exports.errorPage = function (req, res, next) {
+	res.render404 = function (error) {
+		return res.status(404).send({ error: error });
+	};
 
-  next();
+	res.renderError = function (error, statusCode) {
+		if (statusCode === undefined) {
+			statusCode = 400;
+		}
+		return res.status(statusCode).send({ error: error });
+	};
+
+	next();
 };
