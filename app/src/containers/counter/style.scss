@@ -1,7 +1,10 @@
-body { background:#f7f7f7; }
+$color: red;
+
+body{ background:$color; font-size: responsive;}
 button {
   .test {
     margin:5px;
+    border-radius: 2px;
   }
 }
 .test {}

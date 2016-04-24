@@ -11,7 +11,7 @@ export default class extends React.Component {
               <Link to="/counter">Counter</Link>&nbsp;|&nbsp;
               <Link to="/fetch">Fetch</Link>&nbsp;|&nbsp;
               <Link to="/form">Form</Link>&nbsp;|&nbsp;
-              <a href="/about">About</a>
+              <Link to="/product">Product</Link>
             </div>)
   }
 };
