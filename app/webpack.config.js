@@ -24,6 +24,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './assets'),
     filename: 'js/app.js',
+    chunkFilename: 'js/[name].[id].chunk.js'
   },
   node: {
     net: 'empty',

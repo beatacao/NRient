@@ -25,7 +25,7 @@ class Product extends React.Component {
 	}
 }
 
-export default connect(state => ({product: state.product}), productActions)(Product);
+module.exports = connect(state => ({product: state.product}), productActions)(Product);
 
 
  

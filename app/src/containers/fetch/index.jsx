@@ -13,4 +13,4 @@ export class Fetch extends React.Component {
   }
 }
 
-export default connect( state => ( {fetch: state.fetch} ), fetch_actions)(Fetch);
+module.exports = connect( state => ( {fetch: state.fetch} ), fetch_actions)(Fetch);

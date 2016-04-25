@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import {reducer as formReducer} from 'redux-form';
 import * as reducers from './reducers'
-import routes from './containers';
+import routes from './containers/index';
 import configure from './store';
 
 var store = configure(combineReducers({
