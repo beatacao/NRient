@@ -3,10 +3,10 @@ import {api} from '../lib/fetch'
 export function fetch() {
   return dispatch => {
     return api.read("apps")
-              .then(
-                apps => dispatch(fetched(apps)),
-                err  => dispatch(unfetched(err))
-              );
+            .then(
+              apps => dispatch(fetched(apps)),
+              err  => dispatch(unfetched(err))
+            );
   }
 }
 export function fetched (data) {

@@ -6,45 +6,26 @@ import * as productActions from '../../actions/product';
 
 import './product.scss';
 
-// var PRODUCTS = [
-//   {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-//   {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-//   {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-//   {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-//   {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-//   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-// ];
-
 class Product extends React.Component {
-	// componentWillMount(){
-	// 	this.setState({
-	// 		filterText: '',
-	// 		isStockOnly: false
-	// 	})
-	// }
-	// handleUserInput(filterText, isStockOnly){
-	// 	this.setState({
-	// 		filterText: filterText,
-	// 		isStockOnly: isStockOnly
-	// 	})
-	// }
+	componentWillMount(){
+		this.props.actions.fetch();
+	}
 	render(){
 		var {product:{filterText, isStockOnly, products}, actions} = this.props;
 		return <div className='product'>
-			<SearchBar 
-				filterText = {filterText} 
-				isStockOnly = {isStockOnly}
-				onUserInput = {actions.onUserInput.bind(this, filterText, isStockOnly)} />
-			<ProductTable 
-				products={products} 
-				filterText = {filterText} 
-				isStockOnly = {isStockOnly} />
-		</div>
+					<SearchBar 
+						filterText = {filterText} 
+						isStockOnly = {isStockOnly}
+						onUserInput = {actions.onUserInput} />
+					<ProductTable 
+						products={products} 
+						filterText = {filterText} 
+						isStockOnly = {isStockOnly} />
+				</div>
 	}
 }
 
-export default connect(state => ({product: state.product}),
-						productActions)(Product);
+export default connect(state => ({product: state.product}), productActions)(Product);
 
 
  
