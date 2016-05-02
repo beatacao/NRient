@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test make test",
     "test:coverage": "NODE_ENV=test make test-cover",
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --host 0.0.0.0",
+    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --host 0.0.0.0 --port 3000",
     "build": "export NODE_ENV=production && rm -rf ./assets && webpack --progress --colors",
     "update": "export NODE_ENV=production && webpack --progress --colors",
     "serve:coverage": "make coverage-server"
@@ -37,6 +37,7 @@
     "joi-validation-strategy": "^0.3.3",
     "jquery": "^2.2.2",
     "lodash": "^4.6.1",
+    "node-sass": "^3.6.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-loader": "^2.4.0",
@@ -73,7 +74,7 @@
     "rucksack-css": "^0.8.5",
     "sass-loader": "^3.2.0",
     "less-loader": "^2.2.2",
-    "style-loader": "^0.13.0",
+    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"

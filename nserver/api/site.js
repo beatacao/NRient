@@ -3,6 +3,7 @@ var async = require('async');
 var request = require('request');
 var api_config = require('./api_config');
 var cache = require('../common/cache');
+var co = require('co');
 
 exports.message = function (req, res, next) {
 	//api代理，去请求java接口
@@ -50,3 +51,34 @@ exports.merge = function(req, res, next){
 		return res.send({'message': JSON.parse(result.message.body)[0].user_id, 'test_cache':JSON.parse(result.test.body), 'provinces':result.province.body.length});
 	})
 }
+
+// co + generator
+var getProduct = function(api){
+	return new Promise(function(resolve, reject){
+		request(api, function(err, data){
+			if(err){
+
+			}else{
+				resolve(data);
+			}
+		})
+	})
+}
+
+exports.coMerge = function(req, res, next){
+	var coIndexMerge = [
+		getProduct(api_config.message),
+		getProduct(api_config.test_cache),
+		getProduct(api_config.province)
+	]
+	co(function* (){
+		var result = yield coIndexMerge;
+		return res.send(result);
+	})
+}
+
+
+
+
+
+

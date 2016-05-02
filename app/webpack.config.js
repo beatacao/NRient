@@ -47,10 +47,7 @@ module.exports = {
       { test: /\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader?name=svg/[name].[ext]" },
       { test: /\.(scss|css)$/, 
-        loader: ExtractTextPlugin.extract('style-loader',
-                                          'css-loader',
-                                          'sass-loader',
-                                          'postcss-loader') }
+        loader: ExtractTextPlugin.extract([ 'css', 'sass', 'postcss' ]) }
     ],
   },
   resolve: {
