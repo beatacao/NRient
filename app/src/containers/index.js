@@ -11,22 +11,22 @@ const rootRoute = [
 			{path: '/counter', getComponents(location, callback){
 				require.ensure([], function (require) {
 				  callback(null, require('./counter'))
-				})
+				}, 'counter')
 			}},
 			{path: '/form', getComponents(location, callback){
 				require.ensure([], function (require) {
 				  callback(null, require('./form'))
-				})
+				}, 'form')
 			}},
 			{path: '/fetch', getComponents(location, callback){
 				require.ensure([], function (require) {
 				  callback(null, require('./fetch'))
-				})
+				}, 'fetch')
 			}},
 			{path: '/product', getComponents(location, callback){
 				require.ensure([], function (require) {
 				  callback(null, require('./product'))
-				})
+				}, 'product')
 			}}
 		]
 	}	
