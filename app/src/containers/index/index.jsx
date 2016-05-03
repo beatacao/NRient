@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router'
 import {connect} from '../../lib/helper'
 
-import './index.scss';
+require('./index.scss');
 
 export default class extends React.Component {
   render(){

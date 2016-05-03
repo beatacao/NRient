@@ -4,7 +4,7 @@ import SearchBar from './searchbar';
 import ProductTable from './producttable';
 import * as productActions from '../../actions/product';
 
-import './product.scss';
+require('./product.scss');
 
 class Product extends React.Component {
 	componentWillMount(){

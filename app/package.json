@@ -50,7 +50,8 @@
     "redux-effects-credentials": "^0.1.12",
     "redux-form": "^4.2.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.0.1"
+    "redux-thunk": "^2.0.1",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.4",

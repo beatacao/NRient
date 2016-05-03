@@ -19,7 +19,7 @@ module.exports = {
       'redux-form', 'fetch-plus', 'redux-thunk',
       'react-validation-mixin', 'joi-validation-strategy',
       'bootstrap/dist/css/bootstrap.css', 'bootstrap/dist/js/bootstrap.min.js',
-    ],
+    ]
   },
   output: {
     path: path.join(__dirname, './assets'),
@@ -46,8 +46,22 @@ module.exports = {
         loader: "file-loader?name=fonts/[name].[ext]" },
       { test: /\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: "file-loader?name=svg/[name].[ext]" },
-      { test: /\.(scss|css)$/, 
-        loader: ExtractTextPlugin.extract([ 'css', 'sass', 'postcss' ]) }
+      // style编译进js
+      // { test: /\.(css|scss)$/, 
+      //   exclude: /\.useable\.css$/, 
+      //   loaders: ['style', ExtractTextPlugin.extract('css!sass!postcss')]},
+      // { test: /\.useable\.(css|scss)$/, 
+      //   loaders: ['style/useable', ExtractTextPlugin.extract('css!sass!postcss')]}
+      // style split
+      { test: /\.(css|scss)$/,
+        include: /node_modules/,
+        loader: ExtractTextPlugin.extract(['css', 'sass', 'postcss']) },
+      { test: /\.(css|scss)$/,
+        exclude: [/node_modules/, /\.useable\.css$/],
+        loaders: ['style/url', ExtractTextPlugin.extract(['file?name=css/[name].css', 'sass', 'postcss'])] },
+      { test: /\.useable\.(css|scss)$/,
+        exclude: /node_modules/,
+        loaders: ['style/url/useable', ExtractTextPlugin.extract(['file?name=css/[name].css', 'sass', 'postcss'])] }
     ],
   },
   resolve: {

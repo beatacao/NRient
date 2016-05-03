@@ -1,8 +1,7 @@
 import React from 'react';
 import Counter from '../../components/counter'
 
-import './style.scss'
-// import './test.less'
+require('./style.scss');
 
 class CounterApp extends React.Component {
   render(){
