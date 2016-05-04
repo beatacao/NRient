@@ -72,6 +72,12 @@ app.use(express.static(staticDir));
 app.use(require('response-time')());
 app.use(bodyParser.json({limit: '1mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
+
+// mock api request:  DEBUG = nock.* 
+if(_.indexOf(_.split(process.env.DEBUG, ','), 'nock.*') >= 0){
+  require('./nock/index');
+}
+
 app.use(require('method-override')());
 app.use(require('cookie-parser')(config.session_secret));
 app.use(compress());

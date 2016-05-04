@@ -9,11 +9,15 @@ NRient
 
 web开发目录 - app:
 
-- build: npm run build;
-- start: npm start -- --port 3000;
+- 安装依赖: npm install
+- start: npm start;
+- http://localhost:3000
 
-nodejs server目录 - nodejs:
-- start: node app;
+nodejs server目录 - nserver:
+
+- 安装依赖: npm install
+- start: npm start;
+- http://localhost:8080
 
 
 
