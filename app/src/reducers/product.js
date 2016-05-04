@@ -6,6 +6,9 @@ export function product(state = {filterText:'', isStockOnly:false, products:[]},
 	case 'PRODUCTS_FETCHED':
 		return {...state, products: action.payload};
 		break;
+	case 'PRODUCT_UNFETCHED':
+		return {...state, products:null};
+		break;
   }
   return state;
 }

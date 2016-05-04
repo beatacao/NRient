@@ -1,13 +1,14 @@
 //api 
 var host = 'http://api.apps.tunnel.mobi/';
-var host2 = 'http://www.yimei180.com/';
 
 var api_config = {
-	test_cache: host,
-	message: host + 'apps',
-	province: host2 + 'mall/getProvinces',
+	host:host,
+	test: host + "test",
+	apps: host + 'apps',
+	apps2: host + 'apps2',
 	signin: host + 'signin',
-	signout: host + 'signout'
+	signout: host + 'signout',
+	products: host + 'products'
 }
 
 module.exports = api_config;
